@@ -232,7 +232,7 @@ def gen_raw_from_broadlink(data):
             yield sign * decode_one(d)
             sign = sign * -1
 
-    yield from decode_iter(islice(v, length))
+    yield from decode_iter(islice(v, length - 2))
 
     assert next(v) == 0x0d
     assert next(v) == 0x05
